@@ -1,0 +1,61 @@
+<view class="container">
+  <view class="header">
+    <view class="back" bindtap="goBack">
+      <icon type="cancel" size="20" color="#fff"/>
+    </view>
+    <view class="title">配料表识别</view>
+    <view class="more">
+      <icon type="info" size="20" color="#fff"/>
+    </view>
+  </view>
+  
+  <view class="content">
+    <view class="camera-container">
+      <camera wx:if="{{!tempImagePath}}" device-position="back" flash="auto" binderror="cameraError" class="camera"></camera>
+      <image wx:if="{{tempImagePath}}" src="{{tempImagePath}}" mode="aspectFill" class="preview-image"></image>
+      <view wx:if="{{!tempImagePath}}" class="camera-hint">
+        <icon type="search" size="40" color="#999"/>
+        <view class="hint-text">对准食品包装上的配料表<text>点击拍照</text></view>
+      </view>
+    </view>
+    
+    <view class="action-buttons">
+      <button class="btn" bindtap="takePhoto" wx:if="{{!tempImagePath}}">
+        <icon type="success" size="14" color="#fff"/>
+        <text>拍照</text>
+      </button>
+      <button class="btn btn-outline" bindtap="chooseFromAlbum" wx:if="{{!tempImagePath}}">
+        <icon type="info" size="14" color="#42B983"/>
+        <text>从相册选择</text>
+      </button>
+      
+      <button class="btn" bindtap="analyzePhoto" wx:if="{{tempImagePath}}">
+        <icon type="success" size="14" color="#fff"/>
+        <text>识别分析</text>
+      </button>
+      <button class="btn btn-outline" bindtap="retakePhoto" wx:if="{{tempImagePath}}">
+        <icon type="cancel" size="14" color="#42B983"/>
+        <text>重新拍摄</text>
+      </button>
+    </view>
+    
+    <view class="info-box">
+      <icon type="info" size="16" color="#42B983"/>
+      <text>提示：尽量保持画面清晰，对准配料表区域拍摄</text>
+    </view>
+    
+    <view class="recent-title">
+      <icon type="waiting" size="14" color="#666"/>
+      <text>最近识别过的食品：</text>
+    </view>
+    
+    <scroll-view class="recent-list" scroll-x="true">
+      <view class="recent-item" wx:for="{{recentItems}}" wx:key="id" bindtap="viewRecentItem" data-id="{{item.id}}">
+        <view class="recent-image">
+          <icon type="success" size="24" color="#999"/>
+        </view>
+        <view class="recent-name">{{item.name}}</view>
+      </view>
+    </scroll-view>
+  </view>
+</view> 

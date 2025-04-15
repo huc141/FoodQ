@@ -1,0 +1,93 @@
+<!--pages/profile/profile.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">我的</text>
+  </view>
+  
+  <view class="content">
+    <view class="user-info">
+      <view class="avatar-container">
+        <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"></image>
+      </view>
+      <view class="user-details">
+        <block wx:if="{{isLogin}}">
+          <view class="username">{{userInfo.nickName}}</view>
+          <view class="user-id">ID: {{userInfo.userId}}</view>
+        </block>
+        <block wx:else>
+          <view class="username">未登录</view>
+          <view class="login-btn" bindtap="login">点击登录</view>
+        </block>
+      </view>
+    </view>
+    
+    <view class="stats-container">
+      <view class="stat-item">
+        <view class="stat-number">{{stats.scans}}</view>
+        <view class="stat-label">扫描次数</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-number">{{stats.avoided}}</view>
+        <view class="stat-label">已避免风险</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-number">{{stats.favs}}</view>
+        <view class="stat-label">收藏数</view>
+      </view>
+    </view>
+    
+    <view class="menu-list">
+      <view class="menu-section">
+        <view class="menu-item" bindtap="navigateToSettings">
+          <view class="menu-icon">
+            <icon type="info" size="20" color="#42B983"/>
+          </view>
+          <view class="menu-text">个人设置</view>
+          <icon type="arrow" size="16" color="#ccc"/>
+        </view>
+        
+        <view class="menu-item" bindtap="navigateToFavorites">
+          <view class="menu-icon">
+            <icon type="success" size="20" color="#FF9800"/>
+          </view>
+          <view class="menu-text">我的收藏</view>
+          <icon type="arrow" size="16" color="#ccc"/>
+        </view>
+        
+        <view class="menu-item" bindtap="navigateToAlerts">
+          <view class="menu-icon">
+            <icon type="warn" size="20" color="#F44336"/>
+          </view>
+          <view class="menu-text">我的提醒</view>
+          <icon type="arrow" size="16" color="#ccc"/>
+        </view>
+      </view>
+      
+      <view class="menu-section">
+        <view class="menu-item" bindtap="navigateToFeedback">
+          <view class="menu-icon">
+            <icon type="info" size="20" color="#2196F3"/>
+          </view>
+          <view class="menu-text">意见反馈</view>
+          <icon type="arrow" size="16" color="#ccc"/>
+        </view>
+        
+        <view class="menu-item" bindtap="navigateToAbout">
+          <view class="menu-icon">
+            <icon type="info" size="20" color="#9C27B0"/>
+          </view>
+          <view class="menu-text">关于我们</view>
+          <icon type="arrow" size="16" color="#ccc"/>
+        </view>
+      </view>
+      
+      <view class="menu-section">
+        <button class="logout-btn" bindtap="logout" wx:if="{{isLogin}}">退出登录</button>
+      </view>
+      
+      <view class="app-info">
+        <text>食安查 v1.0.0</text>
+      </view>
+    </view>
+  </view>
+</view>

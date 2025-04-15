@@ -1,0 +1,49 @@
+<!--pages/history/history.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">历史记录</text>
+    <view bindtap="clearHistory" class="clear-btn">
+      <icon type="clear" size="16" color="#fff"/>
+    </view>
+  </view>
+  
+  <view class="content">
+    <block wx:if="{{historyList.length > 0}}">
+      <view class="history-filter">
+        <view class="filter-btn {{activeTab === 'all' ? 'active' : ''}}" bindtap="switchTab" data-tab="all">
+          <text>全部</text>
+        </view>
+        <view class="filter-btn {{activeTab === 'food' ? 'active' : ''}}" bindtap="switchTab" data-tab="food">
+          <text>配料查询</text>
+        </view>
+        <view class="filter-btn {{activeTab === 'company' ? 'active' : ''}}" bindtap="switchTab" data-tab="company">
+          <text>企业查询</text>
+        </view>
+      </view>
+      
+      <view class="history-list">
+        <view class="history-item" wx:for="{{filteredList}}" wx:key="id" bindtap="viewDetail" data-id="{{item.id}}" data-type="{{item.type}}">
+          <view class="history-image">
+            <icon class="{{item.icon}}" type="success" size="24" color="#999"/>
+          </view>
+          <view class="history-info">
+            <view class="history-name">{{item.name}}</view>
+            <view class="history-date">{{item.date}}</view>
+            <view class="history-tags">
+              <text class="tag {{tag.type}}" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="index">{{tag.text}}</text>
+            </view>
+          </view>
+          <view class="history-action">
+            <icon type="info" size="16" color="#999"/>
+          </view>
+        </view>
+      </view>
+    </block>
+    
+    <view wx:else class="empty-history">
+      <image class="empty-icon" src="/images/empty.png" mode="aspectFit"></image>
+      <view class="empty-text">暂无历史记录</view>
+      <view class="btn" bindtap="goToHome">去查询</view>
+    </view>
+  </view>
+</view>

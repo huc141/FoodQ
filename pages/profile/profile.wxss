@@ -1,0 +1,167 @@
+/* pages/profile/profile.wxss */
+.container {
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 50px;
+  background-color: #42B983;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-container {
+  margin-right: 15px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #eee;
+}
+
+.user-details {
+  flex: 1;
+}
+
+.username {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.user-id {
+  font-size: 12px;
+  color: #999;
+}
+
+.login-btn {
+  font-size: 14px;
+  color: #42B983;
+  margin-top: 5px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #f0f0f0;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-number {
+  font-size: 20px;
+  font-weight: bold;
+  color: #42B983;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.menu-list {
+  flex: 1;
+}
+
+.menu-section {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-text {
+  flex: 1;
+  font-size: 15px;
+  color: #333;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  font-size: 15px;
+  color: #F44336;
+  background-color: white;
+  border: none;
+  display: block;
+  line-height: 1.5;
+}
+
+.logout-btn::after {
+  border: none;
+}
+
+.app-info {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}

@@ -1,0 +1,76 @@
+<!--pages/companyResult/companyResult.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="back" bindtap="goBack">
+      <icon type="cancel" size="20" color="#fff"/>
+    </view>
+    <view class="title">企业资质查询结果</view>
+    <view class="share" bindtap="shareResult">
+      <icon type="info" size="20" color="#fff"/>
+    </view>
+  </view>
+  
+  <view class="content">
+    <view class="result-card">
+      <view class="company-name">{{companyInfo.name}}</view>
+      <view class="query-time">查询时间: {{companyInfo.queryTime}}</view>
+      
+      <view class="verification-result {{companyInfo.isValid ? 'valid' : 'invalid'}}">
+        <icon type="{{companyInfo.isValid ? 'success' : 'warn'}}" size="20" color="{{companyInfo.isValid ? '#4CAF50' : '#F44336'}}"/>
+        <text>{{companyInfo.isValid ? '企业资质核验通过' : '企业资质存在问题'}}</text>
+      </view>
+    </view>
+    
+    <view class="info-list">
+      <view class="info-item">
+        <view class="info-label">企业名称</view>
+        <view class="info-value">{{companyInfo.name}}</view>
+      </view>
+      
+      <view class="info-item">
+        <view class="info-label">统一社会信用代码</view>
+        <view class="info-value">{{companyInfo.creditCode}}</view>
+        <view class="tag {{companyInfo.creditCodeValid ? 'tag-safe' : 'tag-danger'}}">
+          {{companyInfo.creditCodeValid ? '验证通过' : '验证失败'}}
+        </view>
+      </view>
+      
+      <view class="info-item">
+        <view class="info-label">食品生产许可证编号</view>
+        <view class="info-value">{{companyInfo.licenseNumber}}</view>
+        <view class="tag {{companyInfo.licenseValid ? 'tag-safe' : 'tag-danger'}}">
+          {{companyInfo.licenseValid ? '验证通过' : '验证失败'}}
+        </view>
+      </view>
+      
+      <view class="info-item">
+        <view class="info-label">注册地址</view>
+        <view class="info-value">{{companyInfo.address}}</view>
+      </view>
+      
+      <view class="info-item">
+        <view class="info-label">成立日期</view>
+        <view class="info-value">{{companyInfo.establishDate}}</view>
+      </view>
+      
+      <view class="info-item">
+        <view class="info-label">企业信用情况</view>
+        <view class="safety-meter">
+          <view class="safety-level {{companyInfo.creditLevelClass}}" style="width:{{companyInfo.creditLevelWidth}}%"></view>
+        </view>
+        <view class="info-value">{{companyInfo.creditDesc}}</view>
+      </view>
+    </view>
+    
+    <view class="action-buttons">
+      <button class="btn" bindtap="viewDetailReport">
+        <icon type="info" size="14" color="#fff"/>
+        <text>查看详细报告</text>
+      </button>
+      <button class="btn btn-outline" bindtap="saveResult">
+        <icon type="success" size="14" color="#42B983"/>
+        <text>保存查询结果</text>
+      </button>
+    </view>
+  </view>
+</view>

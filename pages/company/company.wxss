@@ -1,0 +1,141 @@
+/* pages/company/company.wxss */
+.container {
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 50px;
+  background-color: #42B983;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.camera-container {
+  height: 200px;
+  background-color: #eee;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.hint-text {
+  color: #666;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.hint-text text {
+  display: block;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.btn {
+  background-color: #42B983;
+  color: white;
+  border: none;
+  padding: 10px 0;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  width: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn icon {
+  margin-right: 5px;
+}
+
+.btn-outline {
+  background-color: white;
+  color: #42B983;
+  border: 1px solid #42B983;
+}
+
+.manual-section {
+  margin: 20px 0;
+}
+
+.section-title {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.search-box {
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.info-box {
+  background-color: #E3F2FD;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.4;
+  display: flex;
+}
+
+.info-box icon {
+  margin-right: 10px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-title {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.info-list {
+  margin-top: 5px;
+}
+
+.info-item {
+  margin-bottom: 5px;
+  font-size: 13px;
+}

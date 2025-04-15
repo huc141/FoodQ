@@ -1,0 +1,56 @@
+<!--pages/company/company.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="back" bindtap="goBack">
+      <icon type="cancel" size="20" color="#fff"/>
+    </view>
+    <view class="title">企业资质查询</view>
+    <view class="more">
+      <view style="width: 20px;"></view>
+    </view>
+  </view>
+  
+  <view class="content">
+    <view class="camera-container">
+      <icon type="search" size="40" color="#999"/>
+      <view class="hint-text">对准食品包装上的企业信息<text>点击拍照</text></view>
+    </view>
+    
+    <view class="action-buttons">
+      <button class="btn" bindtap="takePhoto">
+        <icon type="success" size="14" color="#fff"/>
+        <text>拍照</text>
+      </button>
+      <button class="btn btn-outline" bindtap="chooseFromAlbum">
+        <icon type="info" size="14" color="#42B983"/>
+        <text>从相册选择</text>
+      </button>
+    </view>
+    
+    <view class="manual-section">
+      <view class="section-title">或手动输入以下信息：</view>
+      
+      <input class="search-box" placeholder="企业名称" bindinput="inputCompanyName" />
+      <input class="search-box" placeholder="食品生产许可证编号" bindinput="inputLicenseNumber" />
+      <input class="search-box" placeholder="生产地址" bindinput="inputAddress" />
+      
+      <button class="btn" bindtap="searchCompany" style="margin-top: 20px;">
+        <icon type="search" size="14" color="#fff"/>
+        <text>查询企业资质</text>
+      </button>
+    </view>
+    
+    <view class="info-box">
+      <icon type="info" size="16" color="#2196F3"/>
+      <view class="info-content">
+        <text class="info-title">企业资质查询可以帮助您：</text>
+        <view class="info-list">
+          <view class="info-item">• 验证食品生产许可证真伪</view>
+          <view class="info-item">• 核实企业注册信息</view>
+          <view class="info-item">• 了解企业信用记录</view>
+          <view class="info-item">• 查询历史违规情况</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

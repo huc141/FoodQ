@@ -1,0 +1,60 @@
+<view class="container">
+  <view class="header">
+    <view class="back" bindtap="goBack">
+      <icon type="cancel" size="20" color="#fff"/>
+    </view>
+    <view class="title">配料分析结果</view>
+    <view class="share" bindtap="shareResult">
+      <icon type="info" size="20" color="#fff"/>
+    </view>
+  </view>
+  
+  <view class="content">
+    <view class="result-card">
+      <view class="food-name">{{foodInfo.name}}</view>
+      <view class="scan-time">识别时间: {{foodInfo.scanTime}}</view>
+      
+      <view class="safety-rating">
+        <view class="rating-header">
+          <text>安全评分</text>
+          <text class="score {{foodInfo.scoreClass}}">{{foodInfo.score}}分</text>
+        </view>
+        <view class="safety-meter">
+          <view class="safety-level {{foodInfo.levelClass}}" style="width:{{foodInfo.levelWidth}}%"></view>
+        </view>
+        <view class="safety-labels">
+          <text>危险</text>
+          <text>警告</text>
+          <text>安全</text>
+        </view>
+      </view>
+      
+      <view class="food-tags">
+        <text class="tag {{tag.type}}" wx:for="{{foodInfo.tags}}" wx:for-item="tag" wx:key="text">{{tag.text}}</text>
+      </view>
+    </view>
+    
+    <view class="section-title">配料详细分析</view>
+    
+    <view class="ingredient-list">
+      <view class="ingredient-item" wx:for="{{foodInfo.ingredients}}" wx:key="name">
+        <view class="ingredient-name">{{item.name}}</view>
+        <view class="ingredient-desc">{{item.desc}}</view>
+        <view class="ingredient-tags">
+          <text class="tag {{tag.type}}" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="text">{{tag.text}}</text>
+        </view>
+        <view class="lethal-dose" wx:if="{{item.lethalDose}}">
+          <icon type="warn" size="14" color="#F44336"/>
+          <text>致死量参考：{{item.lethalDose}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="action-buttons">
+      <button class="btn" bindtap="saveResult">
+        <icon type="success" size="14" color="#fff"/>
+        <text>保存分析结果</text>
+      </button>
+    </view>
+  </view>
+</view> 

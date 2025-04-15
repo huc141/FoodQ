@@ -1,0 +1,207 @@
+.container {
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 50px;
+  background-color: #42B983;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.result-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.food-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.scan-time {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.safety-rating {
+  margin-bottom: 15px;
+}
+
+.rating-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.score {
+  font-weight: bold;
+}
+
+.score-safe {
+  color: #4CAF50;
+}
+
+.score-warning {
+  color: #FF9800;
+}
+
+.score-danger {
+  color: #F44336;
+}
+
+.safety-meter {
+  height: 8px;
+  background-color: #eee;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.safety-level {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.level-safe {
+  background-color: #4CAF50;
+}
+
+.level-warning {
+  background-color: #FF9800;
+}
+
+.level-danger {
+  background-color: #F44336;
+}
+
+.safety-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #999;
+}
+
+.food-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.tag-safe {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+}
+
+.tag-warning {
+  background-color: #FFF3E0;
+  color: #E65100;
+}
+
+.tag-danger {
+  background-color: #FFEBEE;
+  color: #C62828;
+}
+
+.section-title {
+  margin: 15px 0 10px 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.ingredient-item {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ingredient-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.ingredient-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.ingredient-tags {
+  margin-bottom: 10px;
+}
+
+.lethal-dose {
+  background-color: #FFEBEE;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
+.lethal-dose icon {
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+
+.action-buttons {
+  margin: 20px 0;
+}
+
+.btn {
+  background-color: #42B983;
+  color: white;
+  border: none;
+  padding: 10px 0;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn icon {
+  margin-right: 5px;
+}
+ 

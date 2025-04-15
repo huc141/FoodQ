@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <view class="content">
+      <view class="feature-card">
+        <view class="feature-title">快速查询食品安全信息</view>
+        <view class="feature-desc">拍照识别配料表或企业信息，获取详细解析</view>
+        
+        <view class="btn" bindtap="navigateToScan">
+          <icon class="icon-camera" type="search" size="18" color="#fff"></icon>
+          <text>拍照识别配料表</text>
+        </view>
+        
+        <view class="btn btn-outline" bindtap="navigateToCompany">
+          <icon class="icon-building" type="info" size="18" color="#42B983"></icon>
+          <text>企业资质查询</text>
+        </view>
+      </view>
+      
+      <view class="history-title">最近查询</view>
+      
+      <view class="history-list">
+        <view class="history-item" wx:for="{{historyList}}" wx:key="id" bindtap="viewHistoryDetail" data-id="{{item.id}}">
+          
+          <view class="history-image">
+            <icon class="{{item.icon}}" type="success" size="24" color="#999"></icon>
+          </view>
+          
+          <view class="history-info">
+            <view class="history-name">{{item.name}}</view>
+            <view class="history-date">{{item.date}}</view>
+            <view class="history-tags">
+              <text class="tag {{tag.type}}" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="index">{{tag.text}}</text>
+            </view>
+          </view>
+
+        </view>
+      </view>
+      
+    </view>
+  </view>
+</scroll-view>

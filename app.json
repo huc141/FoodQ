@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/start/start",
+    "pages/scan/scan",
+    "pages/result/result",
+    "pages/company/company",
+    "pages/companyResult/companyResult",
+    "pages/history/history",
+    "pages/knowledge/knowledge",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#42B983",
+    "navigationBarTitleText": "食安查",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#42B983",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "历史",
+        "iconPath": "images/history.png",
+        "selectedIconPath": "images/history-active.png"
+      },
+      {
+        "pagePath": "pages/knowledge/knowledge",
+        "text": "知识库",
+        "iconPath": "images/knowledge.png",
+        "selectedIconPath": "images/knowledge-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/profile.png",
+        "selectedIconPath": "images/profile-active.png"
+      }
+    ]
+  },
+  "style": "v2"
+}

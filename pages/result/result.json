@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#42B983",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "配料分析结果",
+  "navigationStyle": "custom",
+  "usingComponents": {}
+}

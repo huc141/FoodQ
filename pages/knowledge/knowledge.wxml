@@ -1,0 +1,52 @@
+<!--pages/knowledge/knowledge.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">食品安全知识库</text>
+    <view class="search-icon" bindtap="showSearch">
+      <icon type="search" size="20" color="#fff"/>
+    </view>
+  </view>
+  
+  <view class="content">
+    <view class="search-box" wx:if="{{showSearchInput}}">
+      <icon type="search" size="16" color="#999"/>
+      <input class="search-input" placeholder="搜索食品安全知识" confirm-type="search" bindinput="inputSearch" bindconfirm="doSearch"/>
+      <icon type="clear" size="16" color="#999" bindtap="clearSearch" wx:if="{{searchText}}"/>
+    </view>
+    
+    <view class="category-list">
+      <view class="category-item" wx:for="{{categories}}" wx:key="id" bindtap="selectCategory" data-id="{{item.id}}">
+        <view class="category-icon" style="background-color: {{item.bgColor}}">
+          <icon type="{{item.icon}}" size="24" color="#fff"/>
+        </view>
+        <view class="category-name">{{item.name}}</view>
+      </view>
+    </view>
+    
+    <view class="section-title">最新食品安全资讯</view>
+    
+    <view class="article-list">
+      <view class="article-item" wx:for="{{articles}}" wx:key="id" bindtap="viewArticle" data-id="{{item.id}}">
+        <view class="article-info">
+          <view class="article-title">{{item.title}}</view>
+          <view class="article-desc">{{item.desc}}</view>
+          <view class="article-meta">
+            <text class="article-source">{{item.source}}</text>
+            <text class="article-date">{{item.date}}</text>
+          </view>
+        </view>
+        <image class="article-image" src="{{item.image}}" mode="aspectFill" wx:if="{{item.image}}"></image>
+      </view>
+    </view>
+    
+    <view class="section-title">常见食品添加剂解析</view>
+    
+    <view class="additive-list">
+      <view class="additive-item" wx:for="{{additives}}" wx:key="id" bindtap="viewAdditive" data-id="{{item.id}}">
+        <view class="additive-name">{{item.name}}</view>
+        <view class="additive-desc">{{item.shortDesc}}</view>
+        <view class="additive-tag {{item.safety}}">{{item.safetyText}}</view>
+      </view>
+    </view>
+  </view>
+</view>

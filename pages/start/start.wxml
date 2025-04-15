@@ -1,0 +1,11 @@
+<view class="start-container">
+  <view class="start-icon">
+    <icon class="food-icon" type="success" size="64" color="#42B983"></icon>
+  </view>
+  <view class="start-title">食安查</view>
+  <view class="start-desc">AI智能食品安全助手</view>
+  <view class="loading-container">
+    <view class="loading-spinner"></view>
+    <view class="loading-text">正在启动中...</view>
+  </view>
+</view> 
